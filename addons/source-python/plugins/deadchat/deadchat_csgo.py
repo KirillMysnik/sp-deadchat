@@ -39,7 +39,7 @@ def pre_send_user_message(args):
         recipient_filter.add_all_players()
 
     elif msg_name == "Cstrike_Chat_T_Dead":
-        recipient_filter.update(*[player.index for player in PlayerIter('t')])
+        recipient_filter.update(PlayerIter('t'))
 
     elif msg_name == "Cstrike_Chat_CT_Dead":
-        recipient_filter.update(*[player.index for player in PlayerIter('ct')])
+        recipient_filter.update(PlayerIter('ct'))

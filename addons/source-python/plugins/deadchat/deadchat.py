@@ -1,13 +1,9 @@
-from core import GAME_NAME
+from messages import UserMessage
 
 from . import info
 
 
-PROTOBUF_GAMES = ("csgo", )
-USING_PROTOBUF = GAME_NAME in PROTOBUF_GAMES
-
-
-if USING_PROTOBUF:
+if UserMessage.is_protobuf():
     from . import deadchat_csgo
 else:
     from . import deadchat_css

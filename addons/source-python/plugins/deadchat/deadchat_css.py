@@ -16,7 +16,7 @@ server = find_binary('server')
 # void UTIL_SayText2Filter( IRecipientFilter& filter, CBasePlayer *pEntity, bool bChat, const char *msg_name, const char *param1, const char *param2, const char *param3, const char *param4 )
 saytext2_filter = server[SAYTEXT2_FILTER_IDENTIFIER].make_function(
     Convention.CDECL,
-    [DataType.POINTER, DataType.POINTER, DataType.BOOL, DataType.POINTER, DataType.POINTER, DataType.POINTER, DataType.POINTER, DataType.POINTER],
+    [DataType.POINTER, DataType.POINTER, DataType.BOOL, DataType.STRING, DataType.STRING, DataType.STRING, DataType.STRING, DataType.STRING],
     DataType.VOID,
 )
 
@@ -30,7 +30,7 @@ def pre_saytext2_filter(args):
         recipient_filter.add_all_players()
 
     elif msg_name == "Cstrike_Chat_T_Dead":
-        recipient_filter.update(*[player.index for player in PlayerIter('t')])
+        recipient_filter.update(PlayerIter('t'))
 
     elif msg_name == "Cstrike_Chat_CT_Dead":
-        recipient_filter.update(*[player.index for player in PlayerIter('ct')])
+        recipient_filter.update(PlayerIter('ct'))
