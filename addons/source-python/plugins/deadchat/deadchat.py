@@ -1,6 +1,6 @@
 from core import GAME_NAME
 
-import info
+from . import info
 
 
 PROTOBUF_GAMES = ("csgo", )
