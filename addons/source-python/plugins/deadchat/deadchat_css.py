@@ -6,7 +6,7 @@ from memory.hooks import PreHook
 
 
 if PLATFORM == 'windows':
-    SAYTEXT2_FILTER_IDENTIFIER = b"\x55\x89\xE5\x57\x56\x53\x83\xEC\x2C\x8B\x55\x14\x2A\x2A\x2A\x2A\x2A\x2A\x2A\x2A\x8B\x45\x0C\x8B\x7D\x18"
+    SAYTEXT2_FILTER_IDENTIFIER = b"\x55\x8B\xEC\x2A\x2A\x2A\x2A\x2A\x2A\x2A\x2A\xE8\x10\x5E\xF1\xFF"
 else:
     SAYTEXT2_FILTER_IDENTIFIER = "_Z19UTIL_SayText2FilterR16IRecipientFilterP11CBasePlayerbPKcS4_S4_S4_S4_"
 
