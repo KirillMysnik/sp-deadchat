@@ -24,7 +24,7 @@ saytext2_filter = server[SAYTEXT2_FILTER_IDENTIFIER].make_function(
 @PreHook(saytext2_filter)
 def pre_saytext2_filter(args):
     recipient_filter = make_object(RecipientFilter, args[0])
-    msg_name = args[3].get_string_array()
+    msg_name = args[3]
 
     if msg_name in ("Cstrike_Chat_AllDead", "Cstrike_Chat_AllSpec"):
         recipient_filter.add_all_players()
