@@ -2,10 +2,14 @@
 # >> IMPORTS
 # =============================================================================
 # Source.Python
-from plugins.manager import plugin_manager
+from paths import PLUGIN_PATH, PLUGIN_DATA_PATH
+
+# DeadChat
+from ..info import info
 
 
 # =============================================================================
-# >> PLUGIN INFO
+# >> GLOBAL VARIABLES
 # =============================================================================
-info = plugin_manager.get_plugin_info(__name__)
+DEADCHAT_DATA_PATH = PLUGIN_DATA_PATH / info.name
+GAME_SPECIFIC_MODULES_PATH = PLUGIN_PATH / info.name / "games"
